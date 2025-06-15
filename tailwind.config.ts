@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+import defaultTheme from 'tailwindcss/defaultTheme';
 
 export default {
 	darkMode: ["class"],
@@ -61,13 +62,21 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
-				}
+				},
+				// Direct Doraemon theme colors for convenience if needed
+				'dora-blue': 'hsl(var(--dora-blue))',
+				'dora-red': 'hsl(var(--dora-red))',
+				'dora-yellow': 'hsl(var(--dora-yellow))',
 			},
 			borderRadius: {
-				lg: 'var(--radius)',
-				md: 'calc(var(--radius) - 2px)',
-				sm: 'calc(var(--radius) - 4px)'
+				xl: 'calc(var(--radius) + 4px)', // 16px
+				lg: 'var(--radius)', // 12px
+				md: 'calc(var(--radius) - 4px)', // 8px
+				sm: 'calc(var(--radius) - 8px)' // 4px
 			},
+			fontFamily: {
+        sans: ['var(--font-sans)', ...defaultTheme.fontFamily.sans],
+      },
 			keyframes: {
 				'accordion-down': {
 					from: {
